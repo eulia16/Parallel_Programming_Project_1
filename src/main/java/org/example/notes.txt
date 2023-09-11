@@ -1,7 +1,6 @@
 Basic Outline For Genetic Algorithms
 
 -
-
 1) Randomly initialize populations p
 2) Determine fitness of population
 3) Until convergence repeat:
@@ -9,7 +8,6 @@ Basic Outline For Genetic Algorithms
       b) Crossover and generate new population
       c) Perform mutation on new population
       d) Calculate fitness for new population
-
 -
 
 we must first design the alg and everything before implementing non-constant code
@@ -26,11 +24,7 @@ break our code into different 'epochs' using the phaser java class
     it has, and then taking another threads top few fitness populations.
 -iterate based upon the number of generations of populations(probs a hardcoded number), OR iterate until the
     overall population fitness is over a certain number
-
-
-
-
-
+21
 
 definite methods we need(in order):
 1)Selection- We randomly (using a biased coin) select a subset of the individuals based on their fitness
@@ -43,7 +37,4 @@ definite methods we need(in order):
 
 3)Mutation- The final step is to apply random mutations: for each bit that we are to copy to the new
             population we allow a small probability of error (for instance 0.1)
-
-
-
 
