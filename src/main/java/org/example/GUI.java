@@ -56,8 +56,11 @@ public class GUI extends JPanel {
                     g2.drawString("(" + x + "," + y + ")", x + padding, y + padding + moveTextDownPixels);
                     g2.drawString("Empty slot", x + padding, y + padding + moveTextDownPixels + moveTextDownPixels);
 
+                    g2.setColor(Color.BLACK);
+                    g2.drawString("Total Affinity: " + this.factoryFloor.getTotalAffinity(),350, 600 + padding + (moveTextDownPixels * 3));
 
                     continue;
+
                 }
 
 
@@ -69,8 +72,18 @@ public class GUI extends JPanel {
                 g2.setColor(Color.BLACK);
                 g2.drawString("(" + x + "," + y + ")", x + padding, y + padding + moveTextDownPixels);
                 g2.drawString(tempStation.getStationType(tempStation), x + padding, y + padding + moveTextDownPixels + moveTextDownPixels);
+
+                g2.drawString("Total Affinity: " + this.factoryFloor.getTotalAffinity(),350, 600 + padding + (moveTextDownPixels * 3));
+
+
             }
         }
+
+
+        g2.drawString("Total Affinity: " + this.factoryFloor.getTotalAffinity(),350, 600 + padding + (moveTextDownPixels * 3));
+
+
+
     }
 
 
