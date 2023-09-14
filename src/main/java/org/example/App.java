@@ -2,6 +2,7 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Phaser;
 
@@ -9,7 +10,9 @@ public class App {
     //get number of available processors, this will represent the number of threads we'll spin up
     final static int numberOfProcessors = Runtime.getRuntime().availableProcessors();
     static volatile boolean visible = false;
-    static final int delay = 500;//in milliseconds
+    static final int delay = 1000;//in milliseconds
+
+    static ConcurrentHashMap<Double, FactoryFloor> affinityToFloors = new ConcurrentHashMap();
 
     public static void main(String[] args) {
         //use concurrent hashmap to store all floor plans with an atomic int to store next_available_slot for

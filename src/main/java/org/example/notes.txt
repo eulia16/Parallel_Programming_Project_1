@@ -38,3 +38,8 @@ definite methods we need(in order):
 3)Mutation- The final step is to apply random mutations: for each bit that we are to copy to the new
             population we allow a small probability of error (for instance 0.1)
 
+
+-----------------------------------------------------------------------
+ability to take in an integer number of 'holes', these will stay permanent to each thread/factory floor throughout
+the whole program
+
