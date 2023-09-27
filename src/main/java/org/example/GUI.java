@@ -5,14 +5,13 @@ import java.awt.*;
 import java.util.Random;
 
 public class GUI extends JPanel {
-    private volatile FactoryFloor factoryFloor;
     private final static int gridSize = Constants.numRowsAndColumnsForGui;
     private final static int squareSize = 80;
 
     private final static int moveTextDownPixels = 25;
     private static int space;
 
-    public GUI(FactoryFloor factoryFloor){
+    public GUI(){
         super();
 
         space = (800 - gridSize)/10;
@@ -22,11 +21,8 @@ public class GUI extends JPanel {
         this.setBackground(Color.WHITE);
 
         this.setVisible(true);
-        this.factoryFloor = factoryFloor;
 
     }
-
-
 
     @Override
     public void paintComponent(Graphics g) {
@@ -38,63 +34,32 @@ public class GUI extends JPanel {
         //set font size to be smaller to allow painting the strings to be easier
         Font font = new Font("Comic Sans MS", Font.BOLD, fontSize);
         g2.setFont(font);
-        Random random = new Random();
 
-
-
-
-        for (int row = 0; row < gridSize; row++) {
-            for (int col = 0; col < gridSize; col++) {
-                int x = col * squareSize + padding;
-                int y = row * squareSize + padding;
-                //this will be if station(x, y coords) == null, set spot equal to black color
-                if(row == random.nextInt(gridSize) || col == random.nextInt(gridSize)){
-                    g2.setColor(Color.BLACK); // You can set your desired color
-                    g2.fillRect(x + padding, y + padding, squareSize, squareSize);
-                    //we will then draw a string that has some info on it on each square
-                    g2.setColor(Color.WHITE);
-                    g2.drawString("(" + x + "," + y + ")", x + padding, y + padding + moveTextDownPixels);
-                    g2.drawString("Empty slot", x + padding, y + padding + moveTextDownPixels + moveTextDownPixels);
-
-                    g2.setColor(Color.BLACK);
-                    g2.drawString("Total Affinity: " + this.factoryFloor.getTotalAffinity(),350, 600 + padding + (moveTextDownPixels * 3));
-
-                    continue;
-
-                }
-
-
-                // Draw a smaller square
-                StationType tempStation = StationType.getRandomStation();
-                g2.setColor(tempStation.getColor()); // You can set your desired color
+        Station[][] floorToDraw = App.bestFloorEver.getFloorOfStations();
+        //Station[][] floorToDraw = App.bestEverFloor;
+        for(int i =0; i < Constants.boardWidth; ++i){
+            for (int j = 0; j< Constants.boardHeight; ++j){
+                int x = i * squareSize + padding;
+                int y = j * squareSize + padding;
+                //start actually presenting the data of the best factory floor
+                g2.setColor(floorToDraw[i][j].getStation().getColor()); // You can set your desired color
 
                 g2.fillRect(x + padding, y + padding, squareSize, squareSize);
                 g2.setColor(Color.BLACK);
+                if(floorToDraw[i][j].getStation().getColor() == Color.BLACK)
+                    g2.setColor(Color.WHITE);
                 g2.drawString("(" + x + "," + y + ")", x + padding, y + padding + moveTextDownPixels);
-                g2.drawString(tempStation.getStationType(tempStation), x + padding, y + padding + moveTextDownPixels + moveTextDownPixels);
+                g2.drawString(floorToDraw[i][j].getStation().getStationType(floorToDraw[i][j].getStation()), x + padding, y + padding + moveTextDownPixels + moveTextDownPixels);
 
-                g2.drawString("Total Affinity: " + this.factoryFloor.getTotalAffinity(),350, 600 + padding + (moveTextDownPixels * 3));
 
 
             }
         }
-
-
-        g2.drawString("Total Affinity: " + this.factoryFloor.getTotalAffinity(),350, 600 + padding + (moveTextDownPixels * 3));
+        g2.setColor(Color.BLACK);
+        g2.drawString("Total Affinity: " + App.bestAffinityEver,350, 600 + padding + (moveTextDownPixels * 3));
 
 
 
     }
-
-
-    //enforce synchronization to force only one thread to be allowed to update the floor to display
-    public synchronized void setFactoryFloorToDisplay(FactoryFloor f){
-        this.factoryFloor = f;
-    }
-
-    public synchronized FactoryFloor getFactoryFloorToDisplay(){
-        return this.factoryFloor;
-    }
-
 
 }

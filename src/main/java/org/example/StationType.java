@@ -8,7 +8,8 @@ public enum StationType{
     MillingMachine (0, Color.CYAN),
     WortBoiler (1, Color.GREEN),
     FermentationTank (2, Color.RED),
-    FiltrationSystem (3, Color.MAGENTA);
+    FiltrationSystem (3, Color.MAGENTA),
+    Hole(4, Color.BLACK);
 
     private int ID;
     private Color color;
@@ -16,7 +17,7 @@ public enum StationType{
     private final static StationType[] stationTypesArray = values();
 
     public static StationType getRandomStation(){
-        int randomNumber =  ThreadLocalRandom.current().nextInt(4);
+        int randomNumber =  ThreadLocalRandom.current().nextInt(StationType.values().length);
         return stationTypesArray[randomNumber];
     }
     public Color getColor(){
@@ -32,8 +33,28 @@ public enum StationType{
             return "FermentationTank";
         if(st.ID == 3)
             return "FiltrationSystem";
+        if(st.ID == 4)
+            return "Hole";
 
         return "";
+    }
+    public String getStationType(int id){
+        if(id == 0)
+            return "MillingMachine";
+        if(id == 1)
+            return "WortBoiler";
+        if(id == 2)
+            return "FermentationTank";
+        if(id == 3)
+            return "FiltrationSystem";
+        if(id == 4)
+            return "Hole";
+
+        return "";
+    }
+
+    public int getID(){
+        return this.ID;
     }
 
     StationType(int i, Color cyan) {

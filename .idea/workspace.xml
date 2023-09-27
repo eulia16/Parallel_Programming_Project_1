@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="22cd2ab7-eb4c-48ed-850f-509e284fc34b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FactoryFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FactoryFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Station.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StationType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +89,11 @@
       <workItem from="1694545437577" duration="1341000" />
       <workItem from="1694577158695" duration="194000" />
       <workItem from="1694630515021" duration="2445000" />
+      <workItem from="1694884748581" duration="97000" />
+      <workItem from="1695305626696" duration="1817000" />
+      <workItem from="1695321979031" duration="3343000" />
+      <workItem from="1695575985563" duration="365000" />
+      <workItem from="1695576537402" duration="775000" />
     </task>
     <servers />
   </component>
@@ -101,5 +113,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Parallel_Genetic_Algorithm_CSC375$App.ic" NAME="App Coverage Results" MODIFIED="1695576862944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
   </component>
 </project>
